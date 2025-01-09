@@ -28,7 +28,7 @@ pub unsafe extern "C" fn trusted_execution() -> SgxStatus {
     println!("=============== Back to Trusted execution =================");
     // The following code is used to generate an attestation report
     // Must be run on sgx-supported machine
-    let data = [69u8; 64];
+    let data = [0u8; 64];
     let attestation = automata_sgx_sdk::dcap::dcap_quote(data);
     let result = match attestation {
         Ok(attestation) => {
